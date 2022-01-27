@@ -17,6 +17,8 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 html {
     height: 100%;
     padding: 0;
@@ -34,11 +36,28 @@ body {
 }
 
 
+h1 {
+    background: #236;
+    box-shadow: 0 0 .125em black;
+    color: white;
+    font-family: 'Lobster', cursive;
+    font-size: 300%;
+    left: 0;
+    margin: 0 0 .5em 0;
+    padding: 0.5em 0;
+    position: fixed;
+    text-align: center;
+    text-shadow: .125em .125em .125em rgba(0, 0, 0, .5);
+    top: 0;
+    width: 100%;
+}
+
+
 #wrapper {
     line-height: 300%;
-    margin: auto;
+    margin: 8em auto 0 auto;
     max-width: 800px;
-    padding: 1em 2em;
+    padding: 0 2em 1em 2em;
 }
 
 #text-placeholder {

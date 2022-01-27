@@ -40,6 +40,7 @@ class Game {
     clickerClicked (e) {
         var covered = this.placeholder.querySelectorAll("span.covered");
         if (!covered.length) {
+            window.location.href = document.getElementById("btn-reload").href;
             return;
         }
         covered[0].innerText = covered[0].getAttribute("data-word");
