@@ -8,7 +8,7 @@ class Phrases {
         "Příští hračka v&nbsp;Happy Meal<br />bude %1.",
         "Když náhodou spím, sním.<br />V&nbsp;tom snu hraje hlavní roli %1.",
         "Dnešní děcka zajímá jen jedno:<br />%1U.",
-        "Pomoc! Můj syn má %1!",
+        "Pomoc! Můj syn má %2!",
         "Tradiční čínská medicína tvrdí, že proti nachlazení je nejlepší %1.",
         "Oskara za %2<br />dostává %1.",
         "Poslouchejte! Zdá se mi, že slyším zpívat %2.",
