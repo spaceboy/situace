@@ -11,7 +11,7 @@ class Game {
         }
 
         var o = this.g.split("-");
-        var phrases = new Phrases(o[0], o[1], o[2]);
+        var phrases = new Phrases(o[0], o[1], o[2], o[3]);
         placeholder.innerHTML = phrases.getPhrase();
         /*
         for (var el of placeholder.querySelectorAll("span.covered")) {
@@ -28,7 +28,8 @@ class Game {
 
     static getRandomUrl () {
         return "?game="
-            + Phrases.getRandomPhraseIndex()
+            + Phrases.getRandomGoalIndex()
+            + "-" + Phrases.getRandomPhraseIndex()
             + "-" + Phrases.getRandomObjectIndex()
             + "-" + Phrases.getRandomObjectIndex();
     }

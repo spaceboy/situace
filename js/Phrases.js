@@ -1,10 +1,19 @@
 class Phrases {
-    static title = [
+    static titles = [
         "Nepříjemné",
         "Komplikované",
         "Roztodivné",
         "Zapeklité",
-        "Neobvyklé"
+        "Neobvyklé",
+        "Zvláštní",
+        "Mimořádné",
+        "Zábavné"
+    ];
+
+    static goals = [
+        "Obahjte tezi:",
+        "Rozviňte příběh:",
+        "Vyvraťte domněnku:"
     ];
 
     static phrases = [
@@ -40,7 +49,7 @@ class Phrases {
         "%1UC a&nbsp;%1C tvoří dokonalý pár!",
         "V&nbsp;novém Svěrákově filmu se zjistí, že %1C je ve skutečnosti %1.",
         "Romantická večeře se svíčkami není nic, když chybí %1.",
-        "Kdo nemá %2, musí mít %1.",
+        "Kdo nemá %2, musí mít %2.",
         "Zavři oči a&nbsp;mysli na %2!",
         "%1U! Jednou to nikdy nestačí!",
         "Až bude svět řídit %1, poslední nadějí se stane %1.",
@@ -97,7 +106,7 @@ class Phrases {
         "Zničil jsem jsem %2, pánové. Šlo hlavně o&nbsp;%2.",
         "%2UC v&nbsp;pytli neutajíš.",
         "Tak dlouho se chodí pro %2, až se %1C utrhne.",
-        "Co je zapotřebí, aby se %1 transformovalo v %2?",
+        "Co je zapotřebí, aby se %1 transformoval(o) v %2?",
         "Nemáš-li %2, nemůžeš vybudovat tržní ekonomiku.<br />To ti ani %1 nepomůže!"
     ];
 
@@ -124,7 +133,7 @@ class Phrases {
         "žárlení na velikost cizích penisů",
         ["Václav Klaus", "Václava Klause"],
         ["moje sada sexy faldíků", "mou sadu sexy faldíků"],
-        ["sada hrnců, co dědeček koupil na zájezdu", "sadu hrnců, co dědeček koupil na zájezdu"],
+        ["sada hrnců koupených dědečkem na zájezdu,", "sadu hrnců koupených dědečkem na zájezdu"],
         ["skupina Jehovistů", "skupinu Jehovistů"],
         "zvracení naprázdno",
         ["včelka Mája", "včelku Máju"],
@@ -352,13 +361,20 @@ class Phrases {
 
     phraseId;
 
+    goalId;
+
     objects = [];
 
-    constructor (phraseId, obj1, obj2) {
+    constructor (goalId, phraseId, obj1, obj2) {
+        this.goalId = goalId;
         this.phraseId = phraseId;
         this.objects.push(obj1);
         this.objects.push(obj2);
     }
+
+    static getRandomGoalIndex () {
+        return Math.floor(Math.random() * this.goals.length);
+    };
 
     static getRandomPhraseIndex () {
         return Math.floor(Math.random() * this.phrases.length);
@@ -369,7 +385,7 @@ class Phrases {
     };
 
     static getRandomTitleAdj () {
-        return this.title[Math.floor(Math.random() * this.title.length)];
+        return this.titles[Math.floor(Math.random() * this.titles.length)];
     }
 
     static firstToUpper (str) {
@@ -409,11 +425,16 @@ class Phrases {
 
     getPhrase () {
         var t = this;
-        return Phrases.phrases[this.phraseId].replace(
-            /%(U|C|UC|CU){0,2}(1|2)(U|C|UC|CU){0,2}/g,
-            function (match) {
-                return t.phraseReplace.call(t, match);
-            }
-        );
+        return "<h2>" + Phrases.goals[this.goalId] + "</h2>"
+            + Phrases.phrases[this.phraseId].replace(
+                /%(U|C|UC|CU){0,2}(1|2)(U|C|UC|CU){0,2}/g,
+                function (match) {
+                    return t.phraseReplace.call(t, match);
+                }
+            );
     };
+
+    getGoal (id) {
+        return this.goals[id];
+    }
 }
