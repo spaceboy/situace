@@ -14,7 +14,8 @@ class Phrases {
         "Obhajte tezi:",
         "Rozviňte příběh:",
         "Vyvraťte domněnku:",
-        "Pantomimicky ztvárněte:"
+        "Pantomimicky ztvárněte:",
+        "Složte báseň na téma:"
     ];
 
     static phrases = [
