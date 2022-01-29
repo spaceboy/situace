@@ -11,7 +11,7 @@ class Phrases {
     ];
 
     static goals = [
-        "Obahjte tezi:",
+        "Obhajte tezi:",
         "Rozviňte příběh:",
         "Vyvraťte domněnku:",
         "Pantomimicky ztvárněte:"

@@ -6,8 +6,8 @@
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
         <link href="css/index.css?v=2" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
-        <script src="js/Phrases.js?v=2"></script>
-        <script src="js/Game.js?v=3"></script>
+        <script src="js/Phrases.js?v=3"></script>
+        <script src="js/Game.js?v=4"></script>
         <script src="js/Splash.js?v=2"></script>
     </head>
     <body>
@@ -20,8 +20,9 @@
         <div id="iconset">
             <a href="#" title="Jak to funguje" id="btn-about"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
             <a href="#" title="Sdílet" id="btn-share"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-            <a href="#" title="Řešit situaci jinak" id="btn-restart"><i class="fa fa-refresh" aria-hidden="true"></i></a>
-            <a href="#" title="Další situace" id="btn-reload"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
+            <a href="#" title="Řešit situaci znovu" id="btn-restart"><i class="fa fa-refresh" aria-hidden="true"></i></a>
+            <a href="#" title="Vytvořte podobnou situaci" id="btn-change"><i class="fa fa-repeat" aria-hidden="true"></i></a>
+            <a href="#" title="Další situace" id="btn-new-game"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
         </div>
         <div id="clicker"></div>
         <div style="display: none;">
@@ -61,11 +62,13 @@
         </div>
         <script>
 
-document.getElementById("btn-reload").href = Game.getRandomUrl();
+document.getElementById("btn-restart").href = location.href;
+document.getElementById("btn-new-game").href = Game.getRandomUrl();
 
 new Game(
     document.getElementById("text-placeholder"),
-    document.getElementById("clicker")
+    document.getElementById("clicker"),
+    document.getElementById("btn-change")
 );
 
 document.getElementById("btn-about").addEventListener(
