@@ -13,7 +13,8 @@ class Phrases {
     static goals = [
         "Obahjte tezi:",
         "Rozviňte příběh:",
-        "Vyvraťte domněnku:"
+        "Vyvraťte domněnku:",
+        "Pantomimicky ztvárněte:"
     ];
 
     static phrases = [
@@ -107,7 +108,8 @@ class Phrases {
         "%2UC v&nbsp;pytli neutajíš.",
         "Tak dlouho se chodí pro %2, až se %1C utrhne.",
         "Co je zapotřebí, aby se %1 transformoval(o) v %2?",
-        "Nemáš-li %2, nemůžeš vybudovat tržní ekonomiku.<br />To ti ani %1 nepomůže!"
+        "Nemáš-li %2, nemůžeš vybudovat tržní ekonomiku.<br />To ti ani %1 nepomůže!",
+        "%1UC je přítel člověka.<br />%1UC větší."
     ];
 
     static objects = [
