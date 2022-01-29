@@ -55,12 +55,13 @@ h1 {
 
 #wrapper {
     line-height: 300%;
-    margin: 8em auto 0 auto;
+    margin: 0 auto;
     max-width: 800px;
-    padding: 0 2em 1em 2em;
+    padding: 0;
 }
 
 #text-placeholder {
+    display: inline-block;
     font-family: "Courier Prime", monospace;
     font-size: 35px;
 }
@@ -122,8 +123,25 @@ h1 {
     background: lightblue;
     border-radius: .25em;
     color: black;
-    margin: 1em auto;
+    margin: 2em auto;
     max-width: 800px;
     padding: 1em 2em;
+    position: relative;
     text-align: left;
+}
+
+.text-block .text-block-closer {
+    background: red;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    height: 2em;
+    line-height: 2em;
+    position: absolute;
+    right: -1em;
+    text-align: center;
+    top: -1em;
+    width: 2em;
 }

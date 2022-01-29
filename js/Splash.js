@@ -18,6 +18,14 @@ class Splash {
     }
 
     static show (splash) {
+        splash.querySelector(".text-block-closer").addEventListener(
+            "click",
+            function (e) {
+                e.preventDefault();
+                Splash.hide();
+            }
+        );
+
         splash.style.display = Splash.display;
     }
 

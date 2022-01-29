@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <title>Situace</title>
         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-        <link href="css/index.css?v=1" rel="stylesheet">
+        <link href="css/index.css?v=2" rel="stylesheet">
         <link href="css/font-awesome.min.css" rel="stylesheet">
         <script src="js/Phrases.js?v=2"></script>
         <script src="js/Game.js?v=2"></script>
-        <script src="js/Splash.js"></script>
+        <script src="js/Splash.js?v=2"></script>
     </head>
     <body>
         <h1><script>document.write(Phrases.getRandomTitleAdj());</script> situace</h1>
@@ -24,10 +24,10 @@
             <a href="#" title="Další situace" id="btn-reload"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></a>
         </div>
         <div id="clicker"></div>
-
         <div style="display: none;">
             <div id="text-rules">
                 <div class="text-block">
+                    <span class="text-block-closer">×</span>
                     <h2>Pravidla</h2>
                     <p>
                         Hra je společenská, takže nejlíp uděláte, když ji budete hrát aspoň ve dvou.
@@ -36,7 +36,7 @@
                         Jak se to hraje? Princip je jednoduchý. Na kilo keců kilo jiných keců&hellip;
                     </p>
                     <p>
-                        Ale teď opět k&nbsp;vážné práci: Na začátku se hráči dohodnou, jaký typ hry budou hrát.
+                        Ale teď opět k&nbsp;vážné práci: Na začátku se hráči dohodnou, v jakém pořadí budou hrát.
                     </p>
                     <p>
                         Po načtení stránky se objeví tvrzení. Jeden nebo více výrazů bude zamaskován. Po kliknutí myší
@@ -44,8 +44,7 @@
                     </p>
                     <p>
                         Až budou všechny výrazy odkryty a objeví se celé tvrzení, jeden z hráčů toto tvrzení začne obhajovat.
-                        Nebo vyvracet. Nebo rozvíjet do krátkého příběhu. To je právě to, na čem se hráči na začátku
-                        musí domluvit.
+                        Nebo vyvracet. Nebo rozvíjet do krátkého příběhu. Podle toho, co mu nadpis poručí.
                     </p>
                     <p>
                         Ostatní hráči jeho výkon náležitě ocení (nebo se s ním začnou přít).<br>
@@ -72,6 +71,7 @@ new Game(
 document.getElementById("btn-about").addEventListener(
     "click",
     function(e) {
+        e.preventDefault();
         Splash.showElement(document.getElementById("text-rules"));
     }
 );
