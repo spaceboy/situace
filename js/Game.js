@@ -11,6 +11,9 @@ class Game {
         }
 
         var o = this.g.split("-");
+        if (o.length != 4) {
+            return this.randomRedirect();
+        }
         var phrases = new Phrases(o[0], o[1], o[2], o[3]);
         placeholder.innerHTML = phrases.getPhrase();
         /*

@@ -29,6 +29,7 @@ html {
 body {
     background: linear-gradient(#349, #56b);
     color: lightblue;
+    font-family: Lobster, sans-serif;
     height: 100%;
     padding: 0;
     margin: 0;
