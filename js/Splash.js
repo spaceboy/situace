@@ -17,34 +17,63 @@ class Splash {
         Splash.getSplash().style.display = "none";
     }
 
-    static show (splash) {
-        splash.querySelector(".text-block-closer").addEventListener(
-            "click",
-            function (e) {
-                e.preventDefault();
-                Splash.hide();
+    static show (splash, callback) {
+        // Standard text block closer:
+        var el = splash.querySelector(".text-block-closer");
+        if (el) {
+            el.addEventListener(
+                "click",
+                function (e) {
+                    e.preventDefault();
+                    Splash.hide();
+                }
+            );
+        } else {
+            // Timed block closer (commercials etc)
+            var el = splash.querySelector(".timed-block-closer");
+            if (el) {
+                var html = el.innerHTML;
+                var count = parseInt(el.getAttribute("time"));
+                if (!count) {
+                    count = 5;
+                }
+                el.innerHTML = count--;
+                var timer = window.setInterval(
+                    function () {
+                        el.innerHTML = count--;
+                        if (count < 0) {
+                            window.clearInterval(timer);
+                            el.innerHTML = html;
+                            el.setAttribute("class", "text-block-closer");
+                            el.addEventListener(
+                                "click",
+                                function (e) {
+                                    e.preventDefault();
+                                    Splash.hide();
+                                }
+                            );
+                        }
+                    },
+                    1000
+                );
             }
-        );
-
+        }
         splash.style.display = Splash.display;
+        if (callback) {
+            callback(el);
+        }
     }
 
     static showHtml (html, callback) {
         var s = Splash.getSplash();
         s.innerHTML = html;
-        Splash.show(s);
-        if (callback) {
-            callback(s);
-        }
+        Splash.show(s, callback);
     }
 
     static showElement (el, callback) {
         var s = Splash.getSplash();
         s.innerHTML = el.innerHTML;
-        Splash.show(s);
-        if (callback) {
-            callback(s);
-        }
+        Splash.show(s, callback);
     }
 
 }

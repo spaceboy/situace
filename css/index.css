@@ -133,9 +133,24 @@ h1 {
     position: relative;
     text-align: left;
 }
-
 .text-block .text-block-closer {
     background: red;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    height: 2em;
+    line-height: 2em;
+    position: absolute;
+    right: -1em;
+    text-align: center;
+    top: -1em;
+    width: 2em;
+}
+
+.text-block .timed-block-closer {
+    background: grey;
     border-radius: 50%;
     color: white;
     cursor: pointer;
