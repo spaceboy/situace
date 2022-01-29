@@ -65,7 +65,10 @@ h1 {
     font-family: "Courier Prime", monospace;
     font-size: 35px;
 }
-
+#text-placeholder h2 {
+    color: white;
+    margin: 2.75em 0 .5em 0;
+}
 #text-placeholder span.covered {
     color: yellow;
 }
